@@ -1,6 +1,11 @@
 module Eloan
   class Client
+    include Helper::Service
+    include Helper::Signature
+    include Api::Payment
+
     attr_accessor :configurate
+
     def initialize(config)
       @configurate = config
     end
@@ -10,10 +15,5 @@ module Eloan
                     url: request_url, timeout: 10, headers: params)
     end
 
-    private
-
-    def handle_url url
-      request_url
-    end
   end
 end

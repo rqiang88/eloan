@@ -3,13 +3,12 @@ require "active_support"
 require "rest-client"
 
 module Eloan
-	extend ActiveSupport::Autoload
-	
-	autoload :Client
-	autoload :Configuration
-	autoload :Api
+  extend ActiveSupport::Autoload
 
-	class << self
+  autoload :Client
+  autoload :Configuration
+
+  class << self
     def configuration
       yield configure
     end
