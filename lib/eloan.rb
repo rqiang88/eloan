@@ -7,6 +7,7 @@ module Eloan
 
   autoload :Client
   autoload :Configuration
+  autoload :ApiLoader
 
   class << self
     def configuration

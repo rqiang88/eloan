@@ -1,8 +1,8 @@
+require 'eloan/api'
+
 module Eloan
   class Client
-    include Helper::Service
-    include Helper::Signature
-    include Api::Payment
+    include Api
 
     attr_accessor :configurate
 
@@ -10,9 +10,11 @@ module Eloan
       @configurate = config
     end
 
-    def execute(request_method, url, params)
+    def execute(request_method, url, options)
       response = RestClient::Request.execute(method: request_method, 
-                    url: request_url, timeout: 10, headers: params)
+                    url: URI.escape(url), headers: {params: options})
+
+      p raw_response response
     end
 
   end
