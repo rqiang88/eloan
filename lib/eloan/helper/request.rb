@@ -1,6 +1,7 @@
 module Eloan
   module Helper
     module Request
+      ### 根据code获取请求方式,默认请求参数
       def request_params(code)
         case code
           when '101'

@@ -27,4 +27,4 @@ rails g eloan:config
 ```
 ## wiki
 
-请见文档
+请见examples/example

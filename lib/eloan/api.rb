@@ -12,7 +12,7 @@ module Eloan
 
 
     def pay code, data = {}
-      request = request_params(code)
+      request = request_params(code.to_s)
       url = generate_request_url(request[:url])
       request_method = request[:method]
 
