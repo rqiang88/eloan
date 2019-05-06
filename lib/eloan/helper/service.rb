@@ -18,7 +18,7 @@ module Eloan
         if response_code.last(2).to_s == '00'
           status, code, message = 'success', 200, 'success'
         else
-          if request_params(response_code.first(3))[:notify] && response_code.last(2).to_s == '00'
+          if request_params(response_code.first(3))[:notify] && response_code.last(2).to_s == '01'
             status, code, message = 'success', 201, '处理中'
           else
             message = response['bind_error_message'].present? ? response['bind_error_message'] : response['response_message']

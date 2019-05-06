@@ -20,7 +20,7 @@ data = {
 Eloan.api.pay(101, data)
 
 # 个人开户代扣签约绑卡(102)
-# code = 101
+# code = 102
 # cert_id String  是 最长20  身份证号码
 # user_name String  是 最长80  用户姓名
 # card_no String  是 最长20  银行卡号

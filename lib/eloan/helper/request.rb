@@ -8,7 +8,7 @@ module Eloan
             {
               url: '/v1/users/add-cash-card',
               method: 'POST',
-              notity: true,
+              notify: true,
               default: {
                 'cert_type' => '00',
                 'card_type' => 'D',
@@ -19,7 +19,7 @@ module Eloan
             {
               url: '/v1/users/add-withhold-card',
               method: 'POST',
-              notity: true,
+              notify: true,
               default: {
                 'cert_type' => '00',
                 'card_type' => 'D',
@@ -38,7 +38,7 @@ module Eloan
             {
               url: '/v1/trade/loan',
               method: 'POST',
-              notity: true,
+              notify: true,
               default: {
                 'business_type' =>  '00',
                 'product_type' => '00',
@@ -57,7 +57,7 @@ module Eloan
             {
               url: '/v1/trade/repay',
               method: 'POST',
-              notity: true,
+              notify: true,
               default: {
                 'business_type' => '00',
                 'product_type' => '00',
@@ -72,7 +72,7 @@ module Eloan
             {
               url: '/v1/trade/loan/cash',
               method: 'POST',
-              notity: true,
+              notify: true,
               default: {
                 'bg_return_url'  => configurate.bg_return_url
               }

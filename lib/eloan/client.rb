@@ -14,7 +14,7 @@ module Eloan
       response = RestClient::Request.execute(method: request_method, 
                     url: URI.escape(url), headers: {params: options})
 
-      p raw_response response
+      raw_response response
     end
 
   end

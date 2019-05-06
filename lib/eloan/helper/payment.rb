@@ -13,10 +13,9 @@ module Eloan
       end
 
       private
-      # 生成流水
+      # 生成长度为28的流水
       def generate_request_seq
-        length = 6 - configurate.platform.length
-        _ljust = 8 + length 
+        _ljust = 14 - configurate.platform.length
         configurate.platform + Time.now.strftime("%Y%m%d%H%M%S") + rand(1000 * 1000).to_s.rjust(_ljust, '0')
       end
 
