@@ -66,12 +66,12 @@ Eloan.api.pay(103, data)
 # user_name String  是 最长80  借款人姓名
 # user_card_no  String  是 最长20  借款人银行卡号
 # user_amount String  是 最长14  借款人金额，小数点后两位数字 #.##
-# user_cash_method  String  是 定长2 取现方式：T0：即时到账，手续费较高；T1：第二日到账，手续费较低, default: T1
+# user_cash_method  String  是 定长2 取现方式：T0：即时到账，手续费较高；T1：第二日到账，手续费较低, default: T0
 # merchant_cert_type  String  否 定长2 受托商户证件类型，受托支付时必填：00-普通营业执照企业； 01-三证合一企业
 # merchant_cert_id  String  否 最长30  受托商户证件号码，受托支付时必填
 # merchant_amount String  否 最长14  受托商户金额，小数点后两位数字#.##，受托支付时必填
 # installment_number  String  是 最长3 分期期数
-# installment_rate  String  是 最长5 分期利率，年化<=36.00%，小数点后两位数字#.##， 如22.22%，传参为：22.22
+# installment_rate  String  是 最长5 分期利率，年化<=36.00%，小数点后两位数字#.##， 如22.22%，传参为：22.22, default: 0.00
 # payment_method  String  是 定长2 还款方式：00-等额本息；01-等额本金；02-一次性还本付息； 03-先息后本(即按频率付息、一次还本)
 # loan_comment  String  否 最长256 备注
 # auditor String  否 最长64  审核人

@@ -1,6 +1,7 @@
 module Eloan
   module Helper
     module Service
+      attr_accessor :chaxue
       def generate_request_url(url='')
         [default_url, url] * ''
       end
@@ -25,20 +26,22 @@ module Eloan
             status, code = 'fail', 202
           end
         end
-        {status: status, code: code, message: message, data: response}
+
+        response = {status: status, code: code, message: message, data: response}
+        unless configurate.production?
+          eloan_message = instance_variable_get(:@eloan_message)
+          response = response.merge(eloan_message: eloan_message)
+        end
       end
 
       private
 
       def default_url
-        if production?
+        if configurate.production?
+          p chaxue
         else
           'https://mertest.cloudpnr.com/api/eloan'
         end
-      end
-
-      def production?
-        configurate.env == 'production'
       end
     end
   end

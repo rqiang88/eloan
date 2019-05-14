@@ -10,7 +10,6 @@ module Eloan
     include Helper::Payment
     include Helper::Request
 
-
     def pay code, data = {}
       request = request_params(code.to_s)
       url = generate_request_url(request[:url])
@@ -19,7 +18,10 @@ module Eloan
       options = handle_params(generate_default_params.merge(data))
       default_params = request[:default]
       default_params.keys.each{|k| options[k] = default_params[k] if options[k].blank? }
-      options["signature"] = hexdigest(handle_request_data(request_method, url, options))
+      
+      eloan_message = handle_request_data(request_method, url, options)
+      instance_variable_set(:@eloan_message, eloan_message)
+      options["signature"] = hexdigest(eloan_message)
 
       response = execute(request_method, url, options)
     end

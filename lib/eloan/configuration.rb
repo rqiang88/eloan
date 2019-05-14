@@ -6,5 +6,9 @@ module Eloan
     def initialize
       @env = 'development'
     end
+
+    def production?
+      env == 'production'
+    end
   end
 end

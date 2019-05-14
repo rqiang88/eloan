@@ -13,7 +13,7 @@ module Eloan
     def execute(request_method, url, options)
       response = RestClient::Request.execute(method: request_method, 
                     url: URI.escape(url), headers: {params: options})
-
+      
       raw_response response
     end
 

@@ -47,9 +47,10 @@ module Eloan
                 'loan_period_type' => '01',
                 'entrusted_flag' => 'N',
                 'user_cert_type' => '00',
-                'user_cash_method' => 'T1',
+                'user_cash_method' => 'T0',
                 'installment_number' => '1',
                 'payment_method' => '02',
+                'installment_rate' => '0.00',
                 'bg_return_url'  => configurate.bg_return_url
               }
             }

@@ -1,6 +1,7 @@
 module Eloan
   module Helper
     module Payment
+
       # 生成默认参数
       def generate_default_params
         {
