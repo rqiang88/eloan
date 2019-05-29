@@ -10,10 +10,12 @@ module Eloan
       @configurate = config
     end
 
-    def execute(request_method, url, options)
-      response = RestClient::Request.execute(method: request_method, 
-                    url: URI.escape(url), headers: {params: options})
-      
+    def execute(method, url, options)
+      if method == 'get'
+        response = RestClient.get(URI.escape(url), options) 
+      else
+        response = RestClient.post(URI.escape(url), options) 
+      end
       raw_response response
     end
 
