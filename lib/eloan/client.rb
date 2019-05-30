@@ -11,8 +11,8 @@ module Eloan
     end
 
     def execute(method, url, options)
-      if method == 'get'
-        response = RestClient.get(URI.escape(url), options) 
+      if method == 'GET'
+        response = RestClient.get(URI.escape(url), params: options) 
       else
         response = RestClient.post(URI.escape(url), options) 
       end
